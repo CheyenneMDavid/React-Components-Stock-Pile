@@ -1,35 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function UseStateWithObjects() {
-	const [name, setName] = useState({ firstName: '', lastName: '' });
-
+function UseEffectCounter() {
+	const [count, setCount] = useState(0);
+	useEffect(() => {
+		console.log('count 1 effect');
+		document.title = count;
+	});
+	const [count2, setCount2] = useState(0);
+	useEffect(() => {
+		console.log('count 2 effect');
+		document.title = count2;
+	});
 	return (
 		<div>
-			<form>
-				<input
-					type="text"
-					value={name.firstName}
-					onChange={(e) =>
-						setName({
-							...name,
-							firstName: e.target.value,
-						})
-					}
-				/>
-				<input
-					type="text"
-					value={name.lastName}
-					onChange={(e) =>
-						setName({
-							...name,
-							lastName: e.target.value,
-						})
-					}
-				/>
-				<h2>{JSON.stringify(name)}</h2>
-			</form>
+			<button onClick={() => setCount((count) => count + 1)}>
+				Increment Count ({count})
+			</button>
+			<button onClick={() => setCount2((count2) => count2 + 1)}>
+				Increment Count2 ({count2})
+			</button>
 		</div>
 	);
 }
 
-export default UseStateWithObjects;
+export default UseEffectCounter;
