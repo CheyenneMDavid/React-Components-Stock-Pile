@@ -1,10 +1,10 @@
 import './App.css';
-import { SearchBar } from './components/ui-components/SearchBar';
+import UseStateWithObjects from './components/UseStateWithObjects';
 
 function App() {
 	return (
 		<div className="App">
-			<SearchBar />
+			<UseStateWithObjects />
 		</div>
 	);
 }
