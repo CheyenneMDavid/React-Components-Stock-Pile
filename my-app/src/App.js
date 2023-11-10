@@ -1,11 +1,10 @@
 import './App.css';
-import HTTPPost from './components//network-requests/HTTPPost';
-// import HTTPRequests from './components/network-requests/HTTPRequests';
+import HTTPHooks from './components/network-requests/HTTPHooks';
 
 function App() {
 	return (
 		<div className="App">
-			<HTTPPost />
+			<HTTPHooks />
 		</div>
 	);
 }
